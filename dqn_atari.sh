@@ -5,8 +5,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task 4
 
-#SBATCH --partition=a100
-#SBATCH --gres=gpu:1
+#SBATCH --partition=largecpu
+
 
 #SBATCH --mail-type=All
 #SBATCH --mail-user=s4642506@uqconnect.edu.au

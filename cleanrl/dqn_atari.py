@@ -210,10 +210,10 @@ poetry run pip install "stable_baselines3==2.0.0a1" "gymnasium[atari,accept-rom-
                     print(f"global_step={global_step}, episodic_return={info['episode']['r']}")
                     writer.add_scalar("charts/episodic_return", info["episode"]["r"], global_step)
                     writer.add_scalar("charts/episodic_length", info["episode"]["l"], global_step)
-                if args.track:
-                    wandb.log({"global_step": global_step,
-                                "charts/episodic_return": info["episode"]["r"],
-                                "charts/episodic_length": info["episode"]["l"]})
+                    if args.track:
+                        wandb.log({"global_step": global_step,
+                                    "charts/episodic_return": info["episode"]["r"],
+                                    "charts/episodic_length": info["episode"]["l"]})
         # TRY NOT TO MODIFY: save data to reply buffer; handle `final_observation`
         real_next_obs = next_obs.copy()
         for idx, trunc in enumerate(truncations):
