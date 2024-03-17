@@ -19,7 +19,7 @@
 conda activate atari
 
 #run python script
-python cleanrl/dqn.py \
+python cleanrl/dqn_atari.py \
     --seed 1 \
     --env_id BreakoutNoFrameskip-v4 \
     --track \
